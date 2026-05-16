@@ -1,0 +1,60 @@
+<% layout("layouts/boilerplate") %> 
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <br><br>
+      <h2 class="mb-4 fw-bold" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+        Create A New Listing
+      </h2>
+
+      <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+        
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input name="listing[title]" id="title" placeholder="Add a Catchy title" type="text" class="form-control" required>
+          <div class="invalid-feedback">title should be valid</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea name="listing[description]" id="description" placeholder="Enter description" class="form-control" rows="3" required></textarea>
+          <div class="invalid-feedback">Enter a short Description</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Listing Image</label>
+          <input name="listing[image]" id="image" type="file" class="form-control" required>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-4 md-4">
+            <label for="price" class="form-label">Price</label>
+            <!-- ✅ FIXED: added type="number" -->
+            <input name="listing[price]" id="price" type="number" placeholder="1200" class="form-control" required>
+            <div class="invalid-feedback">price should be valid</div>
+          </div>
+
+          <div class="mb-3 col-8 md-8">
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" id="country" placeholder="India" type="text" class="form-control" required>
+            <div class="invalid-feedback">country shoud be valid</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input name="listing[location]" id="location" placeholder="Bhubaneswar,Odisha" type="text" class="form-control" required>
+          <div class="invalid-feedback">location should be valid</div>
+        </div>
+
+        <button type="submit" class="btn btn-dark add-btn">Add</button>
+        <br/> <br/>
+      </form>
+
+      <div class="text-center text-muted mt-5" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+        Wanderlust Private Limited
+      </div>
+    </div>
+  </div>
+</div>
