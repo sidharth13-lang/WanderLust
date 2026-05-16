@@ -1,4 +1,4 @@
-<% if (success && success.length > 0) { %>
+<% if (typeof success !== 'undefined' && success.length > 0) { %>
   <% success.forEach(msg => { %>
     <div class="alert alert-success alert-dismissible fade show col-6 offset-3 mt-3 text-center" role="alert">
       <%= msg %>
@@ -7,7 +7,7 @@
   <% }) %>
 <% } %>
 
-<% if (error && error.length > 0) { %>
+<% if (typeof error !== 'undefined' && error.length > 0) { %>
   <% error.forEach(msg => { %>
     <div class="alert alert-danger alert-dismissible fade show col-6 offset-3 mt-3 text-center" role="alert">
       <%= msg %>
